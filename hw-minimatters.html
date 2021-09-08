@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS切版練習 mini matters | 即便微小也很重要</title>
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="./slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./slick-1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            position: fixed;
+            z-index: 999;
+            background: #ffffff;
+            padding: 30px 50px 40px;
+            width: 100%;
+        }
+        
+        .header-ph {
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            background: #ffffff;
+            padding: 10px 20px;
+            width: 100%;
+            border-bottom: 1px solid #c7351d;
+        }
+        
+        .col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        .col-12 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        .container-big {
+            width: 100%;
+        }
+        
+        .container-p0 {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        
+        .h-68 {
+            height: 68px;
+        }
+        
+        .h-29 {
+            height: 29px;
+        }
+        
+        .mini-logo img {
+            width: 200px;
+            height: 48px;
+            object-fit: cover;
+        }
+        
+        .mini-logo-ph img {
+            width: 120px;
+            /* height: 48px; */
+            object-fit: cover;
+        }
+        
+        .list-ph img {
+            width: 20px;
+            height: 16px;
+            object-fit: cover;
+        }
+        
+        .center-link {
+            height: 100%;
+        }
+        
+        .center-link a {
+            padding: 5px 22px;
+        }
+        
+        .searchicon img {
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+        }
+        
+        .right-icon {
+            padding-left: 40px;
+        }
+        
+        .rt-icon img {
+            width: 18px;
+            height: 20px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        
+        .rt-icon:hover a,
+        .rb-icon:hover a {
+            text-decoration: none;
+        }
+        
+        .rb-icon img {
+            width: 23px;
+            height: 20px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        /* banner */
+        /* .banner {} */
+        
+        .banner-pad-pc {
+            padding: 138px 0 0;
+        }
+        
+        .banner-pad-ph {
+            padding: 49px 0 0;
+        }
+        
+        .banner-left {
+            width: 830px;
+            height: 450px;
+            margin-right: 10px;
+        }
+        
+        .banner-left-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .banner-left-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .banner-ph {
+            width: 100%;
+        }
+        
+        .banner-ph-img {
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .banner-ph-img img {
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .banner-right {
+            width: 300px;
+            height: 450px;
+        }
+        
+        .banner-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* demoimg */
+        
+        .demo-1,
+        .demo-2 {
+            width: 100%;
+        }
+        
+        .demo-1 img,
+        .demo-2 img {
+            width: 100%;
+            object-fit: cover;
+        }
+        /* new-in */
+        
+        .new-in {
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .new-in-img {
+            position: relative;
+            margin: 0 6.5px;
+        }
+        
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+        }
+        
+        .new-in-img a:hover .mask {
+            opacity: 1;
+        }
+        
+        .new-in-img p {
+            text-align: center;
+            color: #ffffff;
+            display: block;
+            height: 100%;
+        }
+        
+        .new-in-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        h2 {
+            font-size: 16px;
+            text-align: center;
+            color: #c7351d;
+            margin-bottom: 20px;
+            font-family: 'Noto Sans TC';
+            font-style: normal;
+            font-weight: 400;
+        }
+        /* ins */
+        
+        .ins {
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .ins-img {
+            margin: 0 6.5px;
+        }
+        
+        .ins-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .ins-img-ph img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* fea */
+        
+        .fea {
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .fea-img {
+            margin: 0 6.5px;
+        }
+        
+        .fea-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* footer */
+        
+        footer {
+            border-top: 1px solid #c7351d;
+        }
+        
+        footer a {
+            font-size: 14px;
+            color: #595757;
+            text-decoration: none;
+            font-family: 'Noto Sans TC';
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        footer p {
+            font-size: 14px;
+            line-height: 25px;
+            color: #595757;
+            font-family: "Sen", "Helvetica", "儷黑 Pro", "LiHei Pro", "微軟正黑體", sans-serif;
+        }
+        
+        footer a:hover {
+            color: #363636;
+        }
+        
+        footer li {
+            margin-bottom: 15px;
+        }
+        
+        h4 a,
+        h4 {
+            font-size: 16px;
+            color: #c7351d;
+            display: block;
+            margin-bottom: 15px;
+            font-family: 'Noto Sans TC';
+            font-style: normal;
+            font-weight: 400;
+        }
+        
+        h4 a:hover {
+            color: #c7351d;
+        }
+        
+        .ft-input {
+            width: 300px;
+            height: 35px;
+            border: 1px solid #595757;
+            color: #595757;
+            margin-right: 12px;
+            border-radius: 5px;
+        }
+        
+        .ft-btn {
+            width: 60px;
+            height: 35px;
+            background: #c7351d;
+            color: #ffffff;
+            font-family: 'Noto Sans TC';
+            font-style: normal;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .ft-btn:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+        
+        .ft-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+        
+        .ft-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .emailbox {
+            margin-bottom: 13px;
+        }
+        
+        .ft-copy {
+            font-size: 12px;
+            color: #595757;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+        
+        .ft-company {
+            font-size: 10px;
+            color: #b5b5b6;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 25px;
+        }
+        
+        .slick-prev,
+        .slick-next {
+            height: 17px;
+            width: 10px;
+        }
+        
+        .slick-next,
+        .slick-next:hover {
+            background: url("./img/icon-rightarrow.svg") no-repeat;
+            right: 10px;
+        }
+        
+        .slick-prev,
+        .slick-prev:hover {
+            background: url("./img/icon-leftarrow.svg") no-repeat;
+            left: 10px;
+        }
+        
+        .slick-prev:before {
+            content: '';
+        }
+        
+        .slick-next:before {
+            content: '';
+        }
+        
+        .gototop {
+            width: 30px;
+            height: 30px;
+            position: fixed;
+            right: 30px;
+            bottom: 350px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .gototop img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .bicon-ph {
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            bottom: 0;
+            background-color: #fff;
+            border-top: 1px solid #c7351d;
+            width: 100%;
+            height: 65px;
+        }
+        
+        .bicon-ph span {
+            font-size: 12px;
+            text-align: center;
+            color: #595656;
+            font-family: 'Noto Sans TC';
+            font-style: normal;
+            font-weight: 400;
+        }
+        
+        .bl-icon img {
+            width: 24px;
+            height: 27px;
+            margin: 0 12px;
+        }
+        
+        .br-icon img {
+            width: 31px;
+            height: 27px;
+            margin: 0 2.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="d-none d-lg-block">
+        <div class="d-flex align-items-center h-68">
+            <div class="mini-logo">
+                <a href="#">
+                    <img src="./img/icon-logo.svg" alt="">
+                </a>
+            </div>
+            <div class="center-link mx-auto">
+                <ul class="list-unstyled d-flex align-items-center h-68">
+                    <li><a class="text-dark" href="#">ALL</a></li>
+                    <li><a class="text-dark" href="#">NEW</a></li>
+                    <li><a class="text-dark" href="#">FEATURES</a></li>
+                </ul>
+            </div>
+            <div class="searchicon align-self-start">
+                <a href="#">
+                    <img src="./img/icon-search.svg" onmouseover="this.src='./img/icon-search-hover.svg';" onmouseout="this.src='./img/icon-search.svg';" alt="">
+                </a>
+            </div>
+            <div class="searchbox align-self-start">
+                <input type="text" id="txtSearch" placeholder="SEARCH">
+            </div>
+            <div class="right-icon h-68 d-flex align-items-start flex-column">
+                <div class="rt-icon mb-auto">
+                    <a href="#">
+                        <img src="./img/icon-account.svg" onmouseover="this.src='./img/icon-account-hover.svg';" onmouseout="this.src='./img/icon-account.svg';" alt="">
+                    </a>
+                    <a class="text-dark" href="#">ACCOUNT</a>
+                </div>
+                <div class="rb-icon">
+                    <a href="#">
+                        <img src="./img/icon-cart.svg" onmouseover="this.src='./img/icon-cart-hover.svg';" onmouseout="this.src='./img/icon-cart.svg';" alt="">
+                    </a>
+                    <a class="text-dark" href="#">CART(0)</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="header-ph d-lg-none">
+        <div class="d-flex align-items-center h-29">
+            <div class="mini-logo-ph mr-auto">
+                <a href="#">
+                    <img src="./img/icon-logo.svg" alt="">
+                </a>
+            </div>
+            <div class="list-ph">
+                <img src="./img/icon-menu.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="banner" id="top">
+        <div class="d-none d-lg-block">
+            <div class="container-p0 d-flex banner-pad-pc">
+                <div class="banner-left">
+                    <div class="banner-left-img">
+                        <a href="#"><img src="./img/banner-left1.jpeg" alt=""></a>
+                    </div>
+                    <div class="banner-left-img">
+                        <a href="#"><img src="./img/banner-left2.gif" alt=""></a>
+                    </div>
+                    <div class="banner-left-img">
+                        <a href="#"><img src="./img/banner-left3.gif" alt=""></a>
+                    </div>
+                    <div class="banner-left-img">
+                        <a href="#"><img src="./img/banner-left4.gif" alt=""></a>
+                    </div>
+                    <div class="banner-left-img">
+                        <a href="#"><img src="./img/banner-left5.gif" alt=""></a>
+                    </div>
+                    <div class="banner-left-img">
+                        <a href="#"><img src="./img/banner-left6.gif" alt=""></a>
+                    </div>
+                </div>
+                <div class="banner-right d-none d-lg-block">
+                    <a href="#"><img src="./img/banner-right.gif" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="d-lg-none">
+            <div class="container-p0 d-flex banner-pad-ph">
+                <div class="banner-ph">
+                    <div class="banner-ph-img">
+                        <a href="#"><img src="./img/banner-left1.jpeg" alt=""></a>
+                    </div>
+                    <div class="banner-ph-img">
+                        <a href="#"><img src="./img/banner-left2.gif" alt=""></a>
+                    </div>
+                    <div class="banner-ph-img">
+                        <a href="#"><img src="./img/banner-left3.gif" alt=""></a>
+                    </div>
+                    <div class="banner-ph-img">
+                        <a href="#"><img src="./img/banner-left4.gif" alt=""></a>
+                    </div>
+                    <div class="banner-ph-img">
+                        <a href="#"><img src="./img/banner-left5.gif" alt=""></a>
+                    </div>
+                    <div class="banner-ph-img">
+                        <a href="#"><img src="./img/banner-left6.gif" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="demoimg">
+        <div class="container-p0">
+            <div class="demo-1">
+                <img src="./img/demo-1.jpeg" alt="">
+            </div>
+            <div class="demo-2">
+                <img src="./img/demo-2.gif" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="new-in-box mb-5">
+        <div class="container-p0">
+            <div class="text-center">
+                <h2>NEW IN</h2>
+            </div>
+            <div class="new-in">
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-1.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">百搭5分袖T<br>NT $680</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-2.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">百搭5分袖T<br>NT $680</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-3.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">Mojito古巴領針織上衣<br>NT $920</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-4.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">優質首選內綁帶鬆緊褲<br>NT $920</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-5.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">優質首選內綁帶鬆緊褲<br>NT $920</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-6.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">雙層網紗拼接T<br>NT $980</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-7.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">雙層網紗拼接T<br>NT $980</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-8.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">透膚綁帶襯衫<br>NT $980</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-9.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">記憶拼圖撞色襯衫<br>NT $1,080</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="new-in-img">
+                    <a href="#"><img src="./img/new-in-10.jpeg" alt="">
+                        <div class="mask">
+                            <p class="d-flex align-items-center justify-content-center">記憶拼圖撞色襯衫<br>NT $1,080</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ins-box mb-5">
+        <div class="container-p0">
+            <div class="text-center">
+                <h2>INSPIRATION</h2>
+            </div>
+            <div class="ins">
+                <div class="ins-img">
+                    <a href="#"><img src="./img/ins-1.jpeg" alt=""></a>
+                </div>
+                <div class="ins-img">
+                    <a href="#"><img src="./img/ins-2.jpeg" alt=""></a>
+                </div>
+                <div class="ins-img">
+                    <a href="#"><img src="./img/ins-3.jpeg" alt=""></a>
+                </div>
+                <div class="ins-img">
+                    <a href="#"><img src="./img/ins-4.jpeg" alt=""></a>
+                </div>
+                <div class="ins-img">
+                    <a href="#"><img src="./img/ins-5.jpeg" alt=""></a>
+                </div>
+                <div class="ins-img">
+                    <a href="#"><img src="./img/ins-6.jpeg" alt=""></a>
+                </div>
+                <div class="ins-img">
+                    <a href="#"><img src="./img/ins-7.jpeg" alt=""></a>
+                </div>
+                <div class="ins-img">
+                    <a href="#"><img src="./img/ins-8.jpeg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fea-box mb-5">
+        <div class="container-p0">
+            <div class="text-center">
+                <h2>FEATURES</h2>
+            </div>
+            <div class="fea">
+                <div class="fea-img">
+                    <a href="#"><img src="./img/fea-1.jpeg" alt=""></a>
+                </div>
+                <div class="fea-img">
+                    <a href="#"><img src="./img/fea-2.jpeg" alt=""></a>
+                </div>
+                <div class="fea-img">
+                    <a href="#"><img src="./img/fea-3.jpeg" alt=""></a>
+                </div>
+                <div class="fea-img">
+                    <a href="#"><img src="./img/fea-4.jpeg" alt=""></a>
+                </div>
+                <div class="fea-img">
+                    <a href="#"><img src="./img/fea-5.jpeg" alt=""></a>
+                </div>
+                <div class="fea-img">
+                    <a href="#"><img src="./img/fea-6.jpeg" alt=""></a>
+                </div>
+                <div class="fea-img">
+                    <a href="#"><img src="./img/fea-7.jpeg" alt=""></a>
+                </div>
+                <div class="fea-img">
+                    <a href="#"><img src="./img/fea-8.jpeg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-4 py-4">
+        <div class="container d-flex">
+            <div class="col-2 d-none d-lg-block">
+                <h4><a href="#">關於我們</a></h4>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">隱私權保護</a>
+                    </li>
+                    <li>
+                        <a href="#">品牌理念</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-5 d-none d-lg-block">
+                <h4><a href="#">常見問題</a></h4>
+                <div class="link-box d-flex">
+                    <ul class="list-unstyled col">
+                        <li>
+                            <a href="#">折扣碼使用說明</a>
+                        </li>
+                        <li>
+                            <a href="#">會員服務</a>
+                        </li>
+                        <li>
+                            <a href="#">購物金說明</a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled col">
+                        <li>
+                            <a href="#">海外購物</a>
+                        </li>
+                        <li>
+                            <a href="#">FAQS</a>
+                        </li>
+                        <li>
+                            <a href="#">退貨說明</a>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled col">
+                        <li>
+                            <a href="#">物流配送</a>
+                        </li>
+                        <li>
+                            <a href="#">付款說明</a>
+                        </li>
+                        <li>
+                            <a href="#">紅利點數說明</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+            <div class="col-12 col-sm-5">
+                <h4 class="d-none d-lg-block">News Letters</h4>
+                <h4 class="d-lg-none">常見問題</h4>
+                <div class="emailbox d-flex">
+                    <input type="text" id="txtSubmit" placeholder="填寫您的Email以訂閱最新消息" class="ft-input">
+                    <button type="button" class="btn ft-btn">送出</button>
+                </div>
+                <div class="d-flex h-25">
+                    <div class="ft-icon">
+                        <a href="#"><img src="./img/icon-facebook.svg" onmouseover="this.src='./img/icon-facebook-hover.svg';" onmouseout="this.src='./img/icon-facebook.svg';" alt=""></a>
+                    </div>
+                    <div class="ft-icon">
+                        <a href="#"><img src="./img/icon-instagram.svg" onmouseover="this.src='./img/icon-instagram-hover.svg';" onmouseout="this.src='./img/icon-instagram.svg';" alt=""></a>
+                    </div>
+
+                    <p class="align-items-center">客服信箱：<a href="#">service@minimatters.com.tw</a></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="container ft-cpr text-center">
+            <p class="ft-copy">Copyright © 2020-2024 mini matters.com.tw All Rights Reserved Privacy policyTerms and conditions.
+            </p>
+            <p class="ft-company">康德科技 系統設計</p>
+
+        </div>
+        <div class="gototop">
+            <a href="#top" class="up"><img src="./img/icon-top.svg" alt=""></a>
+        </div>
+        <div class="d-lg-none">
+            <div class="bicon-ph d-flex">
+                <div class="bl-icon col text-center align-self-center">
+                    <a href="#">
+                        <img src="./img/icon-account.svg" alt=""><br>
+                        <span>會員中心</span>
+                    </a>
+                </div>
+                <div class="br-icon col text-center align-self-center">
+                    <a href="#">
+                        <img src="./img/icon-cart.svg" alt=""><br>
+                        <span>購物車</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(".banner-left").slick({
+            dots: true,
+            arrows: false,
+            autoplaySpeed: 5000,
+            autoplay: true,
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    arrows: false,
+                }
+            }]
+        });
+        $(".banner-ph").slick({
+            dots: true,
+            arrows: false,
+            autoplaySpeed: 5000,
+            autoplay: true,
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    arrows: false,
+                }
+            }]
+        });
+        $(".new-in").slick({
+            dots: false,
+            arrows: true,
+            autoplaySpeed: 3000,
+            autoplay: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            // prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+            // nextArrow: '<button type="button" class="slick-next">Previous</button>',
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    arrows: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+        $(".ins").slick({
+            dots: false,
+            arrows: true,
+            autoplaySpeed: 5000,
+            autoplay: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    arrows: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+        $(".fea").slick({
+            dots: false,
+            arrows: true,
+            autoplaySpeed: 4000,
+            autoplay: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    arrows: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+    </script>
+</body>
+
+</html>
